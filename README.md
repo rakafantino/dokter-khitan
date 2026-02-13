@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Dokter Khitan Pekanbaru — Website Landing Page (Next.js)
 
-## Getting Started
+Ringkas
 
-First, run the development server:
+- Website landing page “Dokter Khitan Pekanbaru” dibangun dengan Next.js (App Router), React, dan Tailwind CSS v4.
+- Desain mengikuti “Playful Landing Page” dengan warna utama salmon.
+- Sudah terintegrasi animasi GSAP, WhatsApp booking, Google Maps, dan Instagram feed via Elfsight.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js 16 (App Router)
+- React 19 + TypeScript
+- Tailwind CSS v4
+- GSAP v3 + @gsap/react (useGSAP, ScrollTrigger)
+- Elfsight Instagram Feed Widget
+- Next/Image dengan remotePatterns (Unsplash, Googleusercontent, randomuser.me, Instagram CDN)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Fitur Utama
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Hero image dari public (dr-sugeng.png) dengan animasi masuk.
+- Booking form yang langsung menyusun pesan dan membuka WhatsApp.
+- Bagian layanan (Services) dengan gambar dari folder public.
+- Testimonial berfoto (randomuser.me) yang sudah diizinkan di next.config.ts.
+- Google Maps iframe di footer.
+- Instagram feed menggunakan Elfsight (lazy load).
 
-## Learn More
+Menjalankan Secara Lokal
 
-To learn more about Next.js, take a look at the following resources:
+- Prasyarat: Node.js 18+ dan npm.
+- Instalasi dependency:
+  - npm install
+- Menjalankan dev server:
+  - npm run dev
+- Linting dan build produksi:
+  - npm run lint
+  - npm run build
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Catatan Kualitas Kode
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- TypeScript strict diaktifkan.
+- ESLint aktif (konfigurasi Next core web vitals).
+- Folder .trae sudah dikecualikan dari lint dan TypeScript.
 
-## Deploy on Vercel
+Struktur Direktori Singkat
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- src/app
+  - layout.tsx, page.tsx, globals.css
+- src/components
+  - Header.tsx, Hero.tsx, Services.tsx, WhyChooseUs.tsx, StatsRibbon.tsx
+  - Testimonials.tsx, BookingForm.tsx, Gallery.tsx, Footer.tsx
+- public
+  - dr-sugeng.png, Alisklamp.jpg, Stapler.png, Lem.png, E-Cauter.png
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Konfigurasi Penting
+
+- next.config.ts
+  - Menambahkan domain gambar eksternal:
+    - images.unsplash.com, randomuser.me, lh3.googleusercontent.com
+    - scontent.cdninstagram.com (untuk kesiapan media Instagram)
+- Tailwind v4
+  - Menggunakan custom color variables (primary, secondary, accent, dll) di globals.css.
+
+Integrasi WhatsApp (Booking Form)
+
+- Lokasi: src/components/BookingForm.tsx
+- Tombol “Kirim Pendaftaran” menyusun teks otomatis dari input dan membuka link wa.me dengan pre-filled message.
+
+Animasi GSAP
+
+- Hero.tsx menggunakan @gsap/react (useGSAP) untuk animasi badge, judul, deskripsi, gambar, dan doodle.
+- Services.tsx menggunakan ScrollTrigger untuk animasi “reveal on scroll” pada kartu layanan.
+
+Instagram Feed (Elfsight)
+
+- Lokasi: src/components/Gallery.tsx
+- Script dimuat menggunakan next/script dengan strategy “lazyOnload”.
+- Cara ganti widget:
+  - Ubah class elfsight-app-857cfd12-a1a9-4d67-8507-7fb3c9154878 menjadi ID milik Anda di Gallery.tsx.
+  - Pastikan domain script Elfsight (static.elfsight.com) dapat diakses.
+
+Menyesuaikan Gambar & Konten
+
+- Ganti hero: public/dr-sugeng.png.
+- Ganti metode layanan: public/Alisklamp.jpg, Stapler.png, Lem.png, E-Cauter.png.
+- Sesuaikan teks di masing-masing komponen pada src/components.
+
+Deployment
+
+- Build produksi: npm run build
+- Start server produksi: npm start
+- Rekomendasi platform: Vercel, karena native untuk Next.js.
