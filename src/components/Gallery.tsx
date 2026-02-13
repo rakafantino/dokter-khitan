@@ -1,10 +1,35 @@
 "use client";
 
+import { useRef } from "react";
 import Script from "next/script";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Gallery() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    // Set initial state
+    gsap.set(containerRef.current, { autoAlpha: 0, y: 40 });
+
+    gsap.to(containerRef.current, {
+      autoAlpha: 1,
+      y: 0,
+      duration: 0.7,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 75%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, { scope: containerRef });
+
   return (
-    <section className="py-24 px-6 bg-white" id="galeri">
+    <section ref={containerRef} className="py-24 px-6 bg-white" id="galeri">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-extrabold mb-4">Galeri Ceria</h2>

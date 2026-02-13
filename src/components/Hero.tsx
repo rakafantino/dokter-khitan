@@ -1,9 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const containerRef = useRef(null);
@@ -58,12 +61,15 @@ export default function Hero() {
           },
           "-=0.5",
         );
+
+      // Refresh ScrollTrigger after animations
+      ScrollTrigger.refresh();
     },
     { scope: containerRef },
   );
 
   return (
-    <section ref={containerRef} className="relative pt-20 pb-32 px-6 overflow-hidden">
+    <section id="beranda" ref={containerRef} className="relative pt-20 pb-32 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         <div className="z-10">
           <span className="hero-badge inline-block bg-primary/10 text-primary px-4 py-1 rounded-full font-bold text-sm mb-6 border-2 border-primary/20">#1 Khitan Ramah Anak di Pekanbaru</span>

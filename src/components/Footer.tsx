@@ -1,12 +1,56 @@
+"use client";
+
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function Footer() {
+  const containerRef = useRef(null);
+
+  useGSAP(() => {
+    // Set initial state
+    gsap.set(".footer-left", { autoAlpha: 0, x: -50 });
+    gsap.set(".footer-right", { autoAlpha: 0, x: 50 });
+
+    gsap.to(".footer-left", {
+      autoAlpha: 1,
+      x: 0,
+      duration: 0.7,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    gsap.to(".footer-right", {
+      autoAlpha: 1,
+      x: 0,
+      duration: 0.7,
+      ease: "power2.out",
+      delay: 0.1,
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top 80%",
+        toggleActions: "play none none reverse",
+      },
+    });
+  }, { scope: containerRef });
+
   return (
-    <footer className="bg-white border-t-8 border-primary/10 pt-24 pb-12 px-6" id="kontak">
+    <footer ref={containerRef} className="bg-white border-t-8 border-primary/10 pt-24 pb-12 px-6" id="kontak">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 mb-20">
-        <div>
+        <div className="footer-left">
           <div className="flex items-center gap-2 mb-8">
             <span className="font-extrabold text-2xl tracking-tight text-primary">Dokter Khitan Pekanbaru</span>
           </div>
-          <p className="text-gray-500 mb-8 max-w-md">Klinik khusus khitan modern terbaik di Pekanbaru dengan pelayanan ramah anak dan tenaga medis profesional berpengalaman.</p>
+          <p className="text-gray-500 mb-8 max-w-md">
+            Klinik khusus khitan modern terbaik di Pekanbaru dengan pelayanan ramah anak dan tenaga medis profesional berpengalaman.
+          </p>
           <div className="space-y-4">
             <div className="flex items-start gap-4">
               <span className="material-icons text-primary">location_on</span>
@@ -33,8 +77,16 @@ export default function Footer() {
         </div>
 
         {/* Map Placeholder */}
-        <div className="h-96 bg-gray-100 rounded-[3rem] overflow-hidden border-8 border-white shadow-xl relative">
-          <iframe src="https://maps.google.com/maps?q=0.515828,101.464338&hl=id&z=14&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+        <div className="footer-right h-96 bg-gray-100 rounded-[3rem] overflow-hidden border-8 border-white shadow-xl relative">
+          <iframe 
+            src="https://maps.google.com/maps?q=0.515828,101.464338&hl=id&z=14&output=embed" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade" 
+          />
         </div>
       </div>
 
