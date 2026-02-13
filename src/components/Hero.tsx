@@ -76,11 +76,11 @@ export default function Hero() {
           <h1 className="hero-title text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-8">
             Sunat Tanpa <br /> <span className="text-primary underline decoration-wavy">Drama!</span>
           </h1>
-          <p className="hero-desc text-xl text-[#6d5b5b] mb-10 leading-relaxed max-w-xl">Metode modern yang nyaman, minim nyeri, dengan suasana yang menyenangkan. Tanpa drama, langsung happy!</p>
+          <p className="hero-desc text-xl text-[#6d5b5b] mb-10 leading-relaxed max-w-xl">Metode modern yang nyaman, minim rasa sakit, dengan suasana yang menyenangkan. <br /> Tanpa drama, langsung happy!</p>
         </div>
         <div className="hero-image relative">
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent rounded-full mix-blend-multiply opacity-30 animate-pulse"></div>
-          <div className="bg-white rounded-[3rem] p-4 shadow-2xl rotate-2 relative">
+          <div className="bg-white rounded-xl p-4 shadow-2xl rotate-2 relative">
             <div className="relative w-full h-[500px]">
               <Image alt="Dr. Sugeng" className="rounded-[2.5rem] object-cover" src="/dr-sugeng.png" fill priority />
             </div>

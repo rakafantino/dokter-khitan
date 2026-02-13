@@ -10,8 +10,8 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Dokter Khitan Pekanbaru - Khitan Tanpa Ketakutan",
-  description: "Layanan khitan profesional untuk bayi, anak & dewasa dengan metode terbaru.",
+  title: "Dokter Khitan Pekanbaru - Khitan Tanpa Drama dan Rasa Sakit",
+  description: "Layanan khitan profesional di Pekanbaru untuk bayi, anak & dewasa dengan metode terbaru.",
 };
 
 export default function RootLayout({
