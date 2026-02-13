@@ -80,8 +80,7 @@ Metode: ${method}`;
                 Booking Jadwal Khitan
               </h2>
               <p className="text-gray-600 text-sm md:text-base">
-                Isi form di bawah ini untuk reservasi jadwal. Admin kami akan
-                segera menghubungi Anda.
+                Form simpel, CS kita langsung kontak balik!
               </p>
             </div>
             <form className="space-y-4 md:space-y-6" onSubmit={(e) => e.preventDefault()}>

@@ -34,7 +34,7 @@ export default function Testimonials() {
     {
       name: "Bunda Shinta",
       location: "Pekanbaru Kota",
-      text: "Anak saya awalnya nangis ketakutan, tapi pas di dalam malah asik main game. Pulang-pulang langsung bisa jalan dan pakai celana. Rekomen banget!",
+      text: "Awalnya anak sempat ragu, tapi di sini malahhappy main game. Pulang langsung bisa jalan normal. Sangat rekomen!",
       image: "https://randomuser.me/api/portraits/women/44.jpg",
       borderColor: "border-primary",
       bgBadge: "bg-primary",
@@ -42,7 +42,7 @@ export default function Testimonials() {
     {
       name: "Ayah Heru",
       location: "Panam",
-      text: "Metode Stapler-nya rapi banget hasilnya. Dokternya sabar banget ngejelasin prosesnya ke anak. Gak nyesel jauh-jauh kesini.",
+      text: "Metode Stapler-nya rapi. Dokternya sabar jelasin ke anak. Gak nyesel udah pilih tempat ini.",
       image: "https://randomuser.me/api/portraits/men/32.jpg",
       borderColor: "border-secondary",
       bgBadge: "bg-secondary",
@@ -50,7 +50,7 @@ export default function Testimonials() {
     {
       name: "Mama Dina",
       location: "Rumbai",
-      text: "Tempatnya bersih dan wangi, gak kayak klinik biasanya. Anak saya seneng dapet hadiah setelah khitan. Terima kasih Dokter Khitan!",
+      text: "Tempatnya bersih, wangi, beda dari klinik pada umumnya. Anak happy dapat hadiah. Thank you!",
       image: "https://randomuser.me/api/portraits/women/68.jpg",
       borderColor: "border-accent",
       bgBadge: "bg-accent",
@@ -60,7 +60,7 @@ export default function Testimonials() {
   return (
     <section ref={containerRef} className="py-24 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-center mb-16">Apa Kata Para Orang Tua?</h2>
+        <h2 className="text-4xl font-extrabold text-center mb-16">Cerita Keluarga Bahagia</h2>
         <div className="grid lg:grid-cols-3 gap-12">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="testimonial-card pt-8">

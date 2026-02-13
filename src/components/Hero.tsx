@@ -74,9 +74,9 @@ export default function Hero() {
         <div className="z-10">
           <span className="hero-badge inline-block bg-primary/10 text-primary px-4 py-1 rounded-full font-bold text-sm mb-6 border-2 border-primary/20">#1 Khitan Ramah Anak di Pekanbaru</span>
           <h1 className="hero-title text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-8">
-            Khitan Tanpa <span className="text-primary underline decoration-wavy">Ketakutan</span>, Dengan Senyum!
+            Sunat Tanpa <br /> <span className="text-primary underline decoration-wavy">Drama!</span>
           </h1>
-          <p className="hero-desc text-xl text-[#6d5b5b] mb-10 leading-relaxed max-w-xl">Metode modern yang nyaman, minim nyeri, dan dilakukan oleh tenaga medis profesional dalam suasana yang ceria dan menyenangkan.</p>
+          <p className="hero-desc text-xl text-[#6d5b5b] mb-10 leading-relaxed max-w-xl">Metode modern yang nyaman, minim nyeri, dengan suasana yang menyenangkan. Tanpa drama, langsung happy!</p>
         </div>
         <div className="hero-image relative">
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-accent rounded-full mix-blend-multiply opacity-30 animate-pulse"></div>

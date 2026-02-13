@@ -26,7 +26,6 @@ export default function Services() {
         scrollTrigger: {
           trigger: ".services-heading",
           start: "top 85%",
-          toggleActions: "play none none reverse",
         },
       });
 
@@ -50,8 +49,8 @@ export default function Services() {
   const services = [
     {
       title: "Alisklamp",
-      tagline: "Tanpa Jahit",
-      desc: "Menggunakan tabung pelindung (klamp) sekali pakai. Tanpa jahitan, tanpa perban, minim risiko perdarahan.",
+      tagline: "Tanpa Jahit, Steril Sekali Pakai",
+      desc: "Metode klamp WHO-qualified. Tanpa jahitan, tanpa perban, langsung mandi & aktivitas. Proses cepat dengan anestesi lokal.",
       image: "/Alisklamp.jpg",
       badge: "Terpopuler",
       borderColor: "border-primary",
@@ -59,17 +58,17 @@ export default function Services() {
     },
     {
       title: "Stapler",
-      tagline: "Estetik",
-      desc: "Teknologi terbaru yang memotong dan menjahit sekaligus. Proses super cepat, hasil sangat rapi.",
+      tagline: "Rapi & Cepat",
+      desc: "Teknologi potong-jahit sekaligus. Hasil super estetik, penyembuhan optimal. Paling cocok untuk yang mau tampilan rapi.",
       image: "/Stapler.png",
       badge: null,
       borderColor: "border-secondary",
       bgBadge: "bg-secondary",
     },
     {
-      title: "Metode Lem",
-      tagline: "Modern",
-      desc: "Inovasi perekat medis cair sebagai pengganti jahitan benang. Hasil sangat mulus tanpa bekas.",
+      title: "Lem",
+      tagline: "Tanpa Benang",
+      desc: "Perekat medis 2-Octyl Cyanoacrylate. Tanpa jahitan, penyembuhan lebih cepat, hasil mulus tanpa bekas. Minim perdarahan.",
       image: "/Lem.png",
       badge: null,
       borderColor: "border-accent",
@@ -77,8 +76,8 @@ export default function Services() {
     },
     {
       title: "E-Cauter",
-      tagline: "Laser",
-      desc: "Metode konvensional menggunakan electric cauter untuk memotong kulit dengan panas.",
+      tagline: "Potong Laser Modern",
+      desc: "Teknologi laser modern yang minim perdarahan. Proses cepat, hasil efektif, dan terjangkau. Tanpa perlu kontrol berkala.",
       image: "/E-Cauter.png",
       badge: null,
       borderColor: "border-amber-500",
@@ -91,10 +90,10 @@ export default function Services() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="services-heading text-4xl lg:text-5xl font-extrabold mb-4">
-            Metode Khitan Modern
+            Pilihan Metode Terbaru
           </h2>
           <p className="services-heading text-lg text-gray-600">
-            Pilih metode terbaik yang paling nyaman untuk buah hati Anda.
+            4 cara sunat modern yang nyaman untuk buah hati Anda
           </p>
         </div>
         <div className="services-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -112,7 +111,7 @@ export default function Services() {
                 />
               </div>
               <h3 className="text-2xl font-extrabold mb-2">{service.title}</h3>
-              <p className="text-sm font-bold opacity-70 mb-3">{service.tagline}</p>
+              <p className="text-sm font-bold text-primary mb-3">{service.tagline}</p>
               <p className="text-gray-500 text-sm leading-relaxed mb-4">
                 {service.desc}
               </p>
